@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ee694cb810df44dbb3ccdd6f85d376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemy: {fileID: 0}
+  ennemy: {fileID: 1164258492145535218}
   player: {fileID: 0}
   WhatIsGround:
     serializedVersion: 2

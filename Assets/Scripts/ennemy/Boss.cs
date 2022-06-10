@@ -31,12 +31,11 @@ public class Boss : MonoBehaviour
     public bool CanPunch = true;
     public bool IsCharging = false;
     private Rigidbody rb;
-    int WichMove;
-
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody>(); 
-        weapon = new gun(10, 20, 2 , 1 , 30);
+        weapon = new gun(10, 20, 0.2f , 1 , 30);
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
 
@@ -66,7 +65,14 @@ public class Boss : MonoBehaviour
             {
                 if (CanPunch)
                 {
-                    StartCoroutine(Punch());
+                    if (CanCharge)
+                    {
+                        StartCoroutine(Charge());
+                    }
+                    else
+                    {
+                        StartCoroutine(Punch());
+                    }
                 }
                 ;
             }
@@ -78,9 +84,19 @@ public class Boss : MonoBehaviour
             if (playerIsInSightRange && !playerIsInAttckRange)
             {
                 ChasePlayer();
-            } 
-            if (playerIsInSightRange && playerIsInAttckRange) 
-                AttackPlayer();
+            }
+
+            if (playerIsInSightRange && playerIsInAttckRange)
+            {
+                if (CanCharge)
+                {
+                    StartCoroutine(Charge());
+                }
+                else
+                {
+                    AttackPlayer();
+                }
+            }
             if (!playerIsInAttckRange && !playerIsInSightRange)
                        ennemy.SetDestination(transform.position); 
         }
@@ -98,7 +114,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator Punch()
     {
-        Debug.Log("One PUnch");
+        
         yield return new WaitForSeconds(0.5f);
         
         RaycastHit hit ;
@@ -123,13 +139,10 @@ public class Boss : MonoBehaviour
     
     
     void AttackPlayer()
-    {
+    { 
         ennemy.SetDestination(transform.position);
-       // transform.LookAt(player);
-        if (CanCharge)
-        {
-            StartCoroutine(Charge());
-        }
+       fusils.transform.LookAt(player);
+       StartCoroutine(Shoot());
     }
     
 
@@ -188,7 +201,7 @@ public class Boss : MonoBehaviour
         if (health <= 500 && !HaveMoitierPv)
         {
             HaveMoitierPv = true;
-            weapon = new gun(25, 10, 0, 1, 1);
+            weapon = new gun(50, 15, 0, 1, 1);
             Destroy(fusils);
         }
         if (health <= 0)
