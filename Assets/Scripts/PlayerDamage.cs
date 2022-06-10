@@ -37,7 +37,7 @@ public class PlayerDamage : MonoBehaviour
     IEnumerator CoroutineDmg()
     {
         Panel.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Panel.SetActive(false);
     }
 }
