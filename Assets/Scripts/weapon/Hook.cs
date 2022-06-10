@@ -6,10 +6,12 @@ public class Hook : MonoBehaviour
 {
     [SerializeField] private Transform GrapplingHook;
     [SerializeField] private Transform HandPos;
-    [SerializeField] private GameObject Player;    
-    [SerializeField] public  LayerMask Hookable;
-    [SerializeField] public  float maxDistance;
+    [SerializeField] private GameObject Player;
+    [SerializeField] public GameObject Hookobject;
+    [SerializeField] public LayerMask Hookable;
+    [SerializeField] public float maxDistance;
     [SerializeField] public float HookSpeed;
+    [SerializeField] public static bool havehook;
     [SerializeField] public Vector3 OffSet;
 
     private bool isShooting;
@@ -21,34 +23,40 @@ public class Hook : MonoBehaviour
         isGrappling = false;
         isShooting = false;
         visible = false;
+        Hookobject.SetActive(false);
+        havehook = false;   
     }
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             visible = !visible;
         }
-
-        if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible)
+        if (havehook)
         {
-            ShootHook();
-        }
-        if (isGrappling)
-        {
-            GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
-            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 0.5)
+            Hookobject.SetActive(true);
+            if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible)
             {
-                Player.transform.position = Vector3.Lerp(Player.transform.position, HookPoint - OffSet  , HookSpeed * Time.deltaTime);
+                ShootHook();
             }
-            if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 0.5)
+            if (isGrappling)
             {
-                isGrappling = false ;
-                isShooting = false ;
-                GrapplingHook.SetParent(HandPos);
-                GrapplingHook.position = HandPos.position;
-                PlayerMovement.canDouble = true;
-                GrapplingHook.rotation = HandPos.rotation;
-                GrapplingHook.Rotate(90,0,0);
+                GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
+                if (Vector3.Distance(GrapplingHook.position, HookPoint) < 2)
+                {
+                    Player.transform.position = Vector3.Lerp(Player.transform.position, HookPoint - OffSet, HookSpeed * Time.deltaTime);
+                }
+                if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 2)
+                {
+                    isGrappling = false;
+                    isShooting = false;
+                    GrapplingHook.SetParent(HandPos);
+                    GrapplingHook.position = HandPos.position;
+                    PlayerMovement.canDouble = true;
+                    GrapplingHook.rotation = HandPos.rotation;
+                    GrapplingHook.Rotate(90, 0, 0);
+                }
             }
         }
     }
