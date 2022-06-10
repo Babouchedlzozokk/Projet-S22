@@ -62,7 +62,7 @@ public class look : MonoBehaviour
         yRotation += mouseX * sensX * multiplier;
         xRotation -= mouseY * sensY * multiplier;
 
-        xRotation = Mathf.Clamp(xRotation,-20f, 20f);
+        xRotation = Mathf.Clamp(xRotation,-90f, 50f);
 
     }
 
