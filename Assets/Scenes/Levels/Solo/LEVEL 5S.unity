@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 0
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 2ad2a142f5b38284f93abd56dfa0d942, type: 2}
 --- !u!1001 &1936294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20514,6 +20514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ennemyQuiBougePas (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1164258492145535228, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1737061312}
     - target: {fileID: 1164258492145535229, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -30411,7 +30415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.2150716
+      value: -0.21507166
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30423,7 +30427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.20208059
+      value: 0.20208052
       objectReference: {fileID: 0}
     - target: {fileID: 3845983627750477939, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: Panel
@@ -32470,6 +32474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ennemyQuiBougePas (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1164258492145535228, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1737061312}
     - target: {fileID: 1164258492145535229, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -47286,6 +47294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ennemyQuiBougePas
       objectReference: {fileID: 0}
+    - target: {fileID: 1164258492145535228, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1737061312}
     - target: {fileID: 1164258492145535229, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -51566,6 +51578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00debf980412c49418327c56a1a60db0, type: 3}
+--- !u!4 &1737061312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6565432645906764676, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
+  m_PrefabInstance: {fileID: 1080645225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1739880487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4350644910863500, guid: 36f73ba48af97f64fb68b254be9aaab5, type: 3}

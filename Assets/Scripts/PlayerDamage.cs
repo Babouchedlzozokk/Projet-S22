@@ -11,7 +11,9 @@ public class PlayerDamage : MonoBehaviour
     public float maxHealth = 100;
     public GameObject Panel;
     private Rigidbody rb;
-    private Vector3 oldPosition; 
+    private Vector3 oldPosition;
+    private bool BossIsNear = false;
+    public LayerMask WhatIsBoss;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,7 +22,12 @@ public class PlayerDamage : MonoBehaviour
         healthBar.setHealth(Health);
     }
 
-    
+    private void Update()
+    {
+        if (Physics.CheckSphere(transform.position, 2, WhatIsBoss))
+            TakeDamage(0.5f);
+    }
+
     public void TakeDamage(float damage)
     {
         Health -= damage;
@@ -37,7 +44,7 @@ public class PlayerDamage : MonoBehaviour
     IEnumerator CoroutineDmg()
     {
         Panel.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         Panel.SetActive(false);
     }
 }
