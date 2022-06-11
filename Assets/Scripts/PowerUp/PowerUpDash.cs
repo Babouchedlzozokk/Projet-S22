@@ -6,7 +6,6 @@ public class PowerUpDash : MonoBehaviour
 {
     public static bool HaveDash = false;
     public GameObject pickupEffect;
- 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
