@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnnemyQuiBougePas : MonoBehaviour
 {
+    
+    public GameObject fusil;
     public NavMeshAgent ennemy;
     public Transform player;
     public LayerMask WhatIsGround, WhatIsPlayer;
@@ -58,8 +60,10 @@ public class EnnemyQuiBougePas : MonoBehaviour
 
     void AttackPlayer()
     {
-       
-        transform.LookAt(player);
+        ennemy.SetDestination(transform.position);
+        
+        cam.transform.LookAt(player);
+        fusil.transform.LookAt(player);
         StartCoroutine(Shoot());
     }
     
