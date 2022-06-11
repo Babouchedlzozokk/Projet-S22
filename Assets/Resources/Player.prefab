@@ -2545,6 +2545,9 @@ MonoBehaviour:
   Health: 100
   maxHealth: 100
   Panel: {fileID: 0}
+  WhatIsBoss:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4784972528596424089
 MonoBehaviour:
   m_ObjectHideFlags: 0
