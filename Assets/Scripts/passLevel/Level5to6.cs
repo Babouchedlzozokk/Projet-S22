@@ -10,6 +10,7 @@ public class Level5to6 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerDamage.maxHealth = PlayerDamage.Health;
             Pickup(other);
         }
 

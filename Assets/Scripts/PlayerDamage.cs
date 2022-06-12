@@ -7,8 +7,8 @@ public class PlayerDamage : MonoBehaviour
 {
 
     public HealthBarScript healthBar;
-    public float Health = 100;
-    public float maxHealth = 100;
+    public static float Health = 100;
+    public static float maxHealth = 100;
     public GameObject Panel;
     private Rigidbody rb;
     private Vector3 oldPosition;
