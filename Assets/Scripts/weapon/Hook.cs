@@ -18,7 +18,7 @@ public class Hook : MonoBehaviour
     private Vector3 HookPoint;
     private Quaternion Rot;
     public bool visible;
-
+    public bool hookcd;
     public float timehook;
 
     private void Start()
@@ -26,6 +26,7 @@ public class Hook : MonoBehaviour
         isGrappling = false;
         isShooting = false;
         visible = false;
+        hookcd = false;
         Ont = Player.GetComponent<Rigidbody>();
         Quaternion Rot = HandPos.rotation;
     }
@@ -36,7 +37,7 @@ public class Hook : MonoBehaviour
             visible = !visible;
         }
 
-        if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible)
+        if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible && !hookcd)
         {
             ShootHook();
         }
@@ -51,11 +52,12 @@ public class Hook : MonoBehaviour
             PlayerMovement.canDouble = true;
             GrapplingHook.rotation = HandPos.rotation;
             GrapplingHook.Rotate(90, 0, 0);
+            StartCoroutine(CoroutineWaitHook());
         }
-            if (isGrappling)
+        if (isGrappling)
         {
             GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
-            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4)
+            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4 && !hookcd)
             {
                 HandPos.LookAt(HookPoint);
                 timehook = Time.deltaTime;
@@ -72,6 +74,7 @@ public class Hook : MonoBehaviour
                 PlayerMovement.canDouble = true;
                 GrapplingHook.rotation = HandPos.rotation;
                 GrapplingHook.Rotate(90,0,0);
+                StartCoroutine(CoroutineWaitHook());
             }
         }
     }
@@ -79,7 +82,7 @@ public class Hook : MonoBehaviour
     
     void ShootHook()
     {
-        if (isShooting || isGrappling)
+        if (isShooting || isGrappling || hookcd)
             return;
         isShooting = true;
         RaycastHit hit;
@@ -97,5 +100,12 @@ public class Hook : MonoBehaviour
         {
             isShooting = false;
         }
+    }
+
+    IEnumerator CoroutineWaitHook()
+    {
+        hookcd = true;
+        yield return new WaitForSeconds(1);
+        hookcd = false;
     }
 }
