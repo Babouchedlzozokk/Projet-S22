@@ -41,16 +41,8 @@ public class Boss : MonoBehaviour
 
     }
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
-        
         playerIsInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
         playerIsInAttckRange = Physics.CheckSphere(transform.position, weapon.range, WhatIsPlayer);
 
@@ -145,17 +137,16 @@ public class Boss : MonoBehaviour
        cam.transform.LookAt(player);
        StartCoroutine(Shoot());
     }
-    
 
     IEnumerator Charge()
     {
         IsCharging = true;
         Vector3 playerPos = player.position;
-        ennemy.speed = 1000;
+        ennemy.speed = 30;
+        ennemy.acceleration = ennemy.acceleration * 3;
         ennemy.SetDestination(playerPos);
         yield return new WaitForSeconds(5);
         StartCoroutine(WaitForCharge());
-        
     }
 
    
@@ -164,6 +155,7 @@ public class Boss : MonoBehaviour
     {
         Debug.Log("Mincraft");
         ennemy.speed = 10;
+        ennemy.acceleration = ennemy.acceleration / 3;
         CanCharge = false;
         IsCharging = false;
         yield return new WaitForSeconds(10 );
