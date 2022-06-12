@@ -13,7 +13,7 @@ public class EnnemyMovement : MonoBehaviour
     public LayerMask WhatIsGround, WhatIsPlayer;
 
     [Header("states")] 
-    public float sightRange = 30;
+    public float sightRange = 40;
     public bool playerIsInSightRange;
     public bool playerIsInAttckRange;
     public float heath =100 ;
@@ -31,7 +31,7 @@ public class EnnemyMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        weapon = new gun(10, 10, 0.5f , 1 , 30);
+        weapon = new gun(35, 20, 0 , 0.5f , 30);
 
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
@@ -121,7 +121,7 @@ public class EnnemyMovement : MonoBehaviour
     
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(weapon.attackSpeed);
         Vector3 Random_xy = new Vector3(Random.Range(-weapon.spread, weapon.spread), Random.Range(-weapon.spread, weapon.spread),0);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range) && CanShoot)
@@ -137,7 +137,7 @@ public class EnnemyMovement : MonoBehaviour
     IEnumerator WaitForShoot()
     {
         CanShoot = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(weapon.attackSpeed);
         CanShoot = true;
 
     }

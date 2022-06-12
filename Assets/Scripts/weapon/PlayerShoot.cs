@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        weapon =  new gun(15 ,75 ,0 , 0.2f , 20);
+        weapon =  new gun(15 ,20 ,0 , 0.2f , 20);
         
 }
 

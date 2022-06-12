@@ -31,7 +31,7 @@ public class EnnemyQuiBougePas : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        weapon = new gun(10, 36, 0.3f , 0.5f , 50);
+        weapon = new gun(45, 40, 0 , 0.3f , 50);
 
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
@@ -69,7 +69,7 @@ public class EnnemyQuiBougePas : MonoBehaviour
     
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(weapon.attackSpeed);
         Vector3 Random_xy = new Vector3(Random.Range(-weapon.spread, weapon.spread), Random.Range(-weapon.spread, weapon.spread),0);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range) && CanShoot)
