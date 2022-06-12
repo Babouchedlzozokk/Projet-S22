@@ -152,8 +152,8 @@ public class Boss : MonoBehaviour
         Vector3 playerPos = player.position;
         ennemy.speed = 100;
         ennemy.SetDestination(playerPos);
-        ennemy.speed = 10;
         yield return new WaitForSeconds(5);
+        ennemy.speed = 10;
         StartCoroutine(WaitForCharge());
         
     }
