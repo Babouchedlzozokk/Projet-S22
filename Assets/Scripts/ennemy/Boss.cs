@@ -142,6 +142,7 @@ public class Boss : MonoBehaviour
     { 
         ennemy.SetDestination(transform.position);
        fusils.transform.LookAt(player);
+       cam.transform.LookAt(player);
        StartCoroutine(Shoot());
     }
     
@@ -153,7 +154,6 @@ public class Boss : MonoBehaviour
         ennemy.speed = 100;
         ennemy.SetDestination(playerPos);
         yield return new WaitForSeconds(5);
-        ennemy.speed = 10;
         StartCoroutine(WaitForCharge());
         
     }
@@ -163,6 +163,7 @@ public class Boss : MonoBehaviour
     IEnumerator WaitForCharge ()
     {
         Debug.Log("Mincraft");
+        ennemy.speed = 10;
         CanCharge = false;
         IsCharging = false;
         yield return new WaitForSeconds(10 );

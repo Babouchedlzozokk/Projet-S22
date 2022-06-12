@@ -23,7 +23,7 @@ public class EnnemyQuiBougePas : MonoBehaviour
     public static gun weapon;
     public ParticleSystem MuzzleFlash;
     public bool CanShoot = true;
-    public float heath =100 ;
+    public float heath =200 ;
     
     private Rigidbody rb;
     
