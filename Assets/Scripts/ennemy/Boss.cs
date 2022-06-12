@@ -57,14 +57,10 @@ public class Boss : MonoBehaviour
             {
                 if (CanPunch)
                 {
-                    if (CanCharge)
-                    {
-                        StartCoroutine(Charge());
-                    }
-                    else
-                    {
+                    
+                    
                         StartCoroutine(Punch());
-                    }
+                    
                 }
                 ;
             }
@@ -112,7 +108,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator Punch()
     {
-        
+        cam.transform.LookAt(player);
         yield return new WaitForSeconds(0.5f);
         
         RaycastHit hit ;
@@ -149,7 +145,6 @@ public class Boss : MonoBehaviour
         IsCharging = true;
         Vector3 playerPos = player.position;
         ennemy.speed = 30;
-        ennemy.acceleration = ennemy.acceleration * 3;
         ennemy.SetDestination(playerPos);
         yield return new WaitForSeconds(5);
         StartCoroutine(WaitForCharge());
@@ -163,17 +158,17 @@ public class Boss : MonoBehaviour
         soundplaying = false;
     }
 
-    IEnumerator WaitForCharge ()
-    {
-        Debug.Log("Mincraft");
-        ennemy.speed = 10;
-        ennemy.acceleration = ennemy.acceleration / 3;
-        CanCharge = false;
-        IsCharging = false;
-        yield return new WaitForSeconds(10 );
-        CanCharge = true;
+   IEnumerator WaitForCharge ()
+   {
+       Debug.Log("Mincraft");
+       ennemy.speed = 10;
         
-    }
+       CanCharge = false;
+       IsCharging = false;
+       yield return new WaitForSeconds(10 );
+       CanCharge = true;
+        
+   }
     
     IEnumerator Shoot()
     {

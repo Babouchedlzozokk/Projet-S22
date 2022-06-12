@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738067734338768393}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Boss
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ Transform:
   - {fileID: 7296910422302629674}
   - {fileID: 2276939208570499982}
   m_Father: {fileID: 7073381432432711476}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2658488285811334330
 GameObject:
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 3702540259257238272}
   - component: {fileID: 3702540259258103890}
   - component: {fileID: 3702540259259511942}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SciFiGunLightBlue (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,10 +646,9 @@ Transform:
   m_LocalPosition: {x: 0.5563202, y: 1.3099976, z: 0.69836175}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
-  - {fileID: 3265036015905835553}
   - {fileID: 5112455840750848719}
   m_Father: {fileID: 7073381432432711476}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3702540259258103890
 MeshFilter:
@@ -1081,7 +1080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5112455840750848719}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,7 +1100,7 @@ Transform:
   m_Children:
   - {fileID: 5112455842308181447}
   m_Father: {fileID: 3702540259257238272}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
 --- !u!1 &5112455842307887589
 GameObject:
@@ -1114,7 +1113,7 @@ GameObject:
   - component: {fileID: 5112455842308181445}
   - component: {fileID: 5112455842323384451}
   - component: {fileID: 5112455842323493155}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5889,7 +5888,7 @@ GameObject:
   - component: {fileID: 5112455842308181447}
   - component: {fileID: 5112455842323384453}
   - component: {fileID: 5112455842323493157}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'muzzleFlash '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10710,7 +10709,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7073381432432711476}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &3033138354217050067
 SkinnedMeshRenderer:
@@ -10838,7 +10837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3265036015905835553}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10853,10 +10852,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5314267378916272026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2781601, y: -0.5799976, z: -0.34918088}
-  m_LocalScale: {x: 0.5, y: 0.6666667, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0.7299999, z: 0}
+  m_LocalScale: {x: 1, y: 0.6666667, z: 1}
   m_Children: []
-  m_Father: {fileID: 3702540259257238272}
+  m_Father: {fileID: 7073381432432711476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5416422908985576975
@@ -11478,9 +11477,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7593739962177981838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.8, z: 0}
-  m_LocalScale: {x: 3, y: 4, z: 3}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalScale: {x: 2, y: 3, z: 2}
   m_Children:
+  - {fileID: 3265036015905835553}
   - {fileID: 3702540259257238272}
   - {fileID: 7084535234038239293}
   - {fileID: 19456552649414659}
@@ -11514,9 +11514,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &1944189850322718543
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11528,7 +11528,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 0
+  m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -11605,7 +11605,7 @@ MonoBehaviour:
   playerIsInSightRange: 0
   playerIsInAttckRange: 0
   playerTouch: 0
-  health: 1000
+  health: 500
   HaveMoitierPv: 0
   cam: {fileID: 5314267378916272026}
   MuzzleFlash: {fileID: 5112455842323384453}
