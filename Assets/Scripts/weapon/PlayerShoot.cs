@@ -48,7 +48,7 @@ public class PlayerShoot : MonoBehaviour
             visible = !visible;
         }
 
-        if (!visible && Weaponappear.Haveweapon)
+        if (!visible )
         {
             if (Input.GetKeyDown(INPUTS.reload))
                 StartCoroutine(Reload());
