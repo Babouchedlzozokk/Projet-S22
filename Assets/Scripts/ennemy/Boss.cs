@@ -35,7 +35,7 @@ public class Boss : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>(); 
-        weapon = new gun(10, 20, 0.2f , 1 , 30);
+        weapon = new gun(37, 20, 0 , 1 , 30);
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
 
@@ -151,7 +151,7 @@ public class Boss : MonoBehaviour
     {
         IsCharging = true;
         Vector3 playerPos = player.position;
-        ennemy.speed = 100;
+        ennemy.speed = 1000;
         ennemy.SetDestination(playerPos);
         yield return new WaitForSeconds(5);
         StartCoroutine(WaitForCharge());

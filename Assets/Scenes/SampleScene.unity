@@ -69229,19 +69229,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.24413624
+      value: -0.24413623
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.68052125
+      value: 0.6805213
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.30635437
+      value: 0.3063543
       objectReference: {fileID: 0}
     - target: {fileID: 2654303691027690766, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.61922157
+      value: 0.6192215
       objectReference: {fileID: 0}
     - target: {fileID: 3845983627750477939, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: Panel
@@ -69251,6 +69251,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1009562647}
+    - target: {fileID: 3845983627750477939, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
+      propertyPath: WhatIsBoss.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 6565432645906764676, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -71315,6 +71319,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582906543166566835, guid: 151ad20507ccac84b96d65cfd71bf3fa, type: 3}
       propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944189850322718543, guid: 151ad20507ccac84b96d65cfd71bf3fa, type: 3}
+      propertyPath: m_Acceleration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100136606688581287, guid: 151ad20507ccac84b96d65cfd71bf3fa, type: 3}

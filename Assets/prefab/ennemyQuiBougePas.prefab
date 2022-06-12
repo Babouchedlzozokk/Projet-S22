@@ -6485,7 +6485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6923881310481906130}
   m_Layer: 0
-  m_Name: EnnemyQuiBougePas
+  m_Name: ennemyQuiBougePas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6671,6 +6671,7 @@ GameObject:
   - component: {fileID: 6274375476150503854}
   - component: {fileID: 281364142323636442}
   - component: {fileID: 6525508686795461948}
+  - component: {fileID: 6527049082906559546}
   m_Layer: 10
   m_Name: Ch44_nonPBR
   m_TagString: enemy
@@ -6761,6 +6762,20 @@ MonoBehaviour:
   MuzzleFlash: {fileID: 6813400615451249382}
   CanShoot: 1
   heath: 100
+--- !u!136 &6527049082906559546
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753816019529369024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7864331928219405897
 GameObject:
   m_ObjectHideFlags: 0
