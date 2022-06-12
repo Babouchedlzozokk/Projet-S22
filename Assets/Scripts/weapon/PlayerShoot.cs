@@ -19,8 +19,8 @@ public class PlayerShoot : MonoBehaviour
     public bool canShoot = true;
     public float BalleRestante;
 
-    public gun weapon; 
-
+    public gun weapon;
+    public Text ammo;
 
 
 
@@ -37,6 +37,7 @@ public class PlayerShoot : MonoBehaviour
     {
         visible = false;
         BalleRestante = weapon.chargeur;
+        ammo.text = BalleRestante + "/20";
     }
 
     // Update is called once per frame
@@ -59,7 +60,8 @@ public class PlayerShoot : MonoBehaviour
                 else if ( Input.GetKey(INPUTS.tir_principal))
                 {
                     SoundManagerScript.PlaySound("gunshot");
-                    Shoot(); 
+                    Shoot();
+                    ammo.text = BalleRestante + "/20";
                     muzzleFlash.Play();
                    
                 }
@@ -74,6 +76,7 @@ public class PlayerShoot : MonoBehaviour
         
         RaycastHit hit;
         BalleRestante--;
+        ammo.text = BalleRestante + "/20";
         Vector3 Random_xy = new Vector3(Random.Range(-weapon.spread, weapon.spread), Random.Range(-weapon.spread, weapon.spread),0);
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range))
         {
@@ -137,6 +140,7 @@ public class PlayerShoot : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         canShoot = true;
         BalleRestante = weapon.chargeur;
+        ammo.text = BalleRestante + "/20";
     }
     
 
