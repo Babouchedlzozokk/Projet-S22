@@ -18,6 +18,9 @@ public class Hook : MonoBehaviour
     private Vector3 HookPoint;
     private Quaternion Rot;
     public bool visible;
+
+    public float timehook;
+
     private void Start()
     {
         isGrappling = false;
@@ -37,12 +40,25 @@ public class Hook : MonoBehaviour
         {
             ShootHook();
         }
-        if (isGrappling)
+        if (isShooting &&! visible && Input.GetKeyUp(INPUTS.tir_secondaire))
+        {
+            Ont.AddForce(HandPos.transform.forward * (Time.deltaTime - timehook) * 10, ForceMode.Force);
+            isShooting=false;
+            isGrappling=false;
+
+            GrapplingHook.SetParent(HandPos);
+            GrapplingHook.position = HandPos.position;
+            PlayerMovement.canDouble = true;
+            GrapplingHook.rotation = HandPos.rotation;
+            GrapplingHook.Rotate(90, 0, 0);
+        }
+            if (isGrappling)
         {
             GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
             if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4)
             {
                 HandPos.LookAt(HookPoint);
+                timehook = Time.deltaTime;
                 Ont.AddForce(HandPos.transform.forward*200, ForceMode.Force);
                 HandPos.rotation = Rot;
             }
