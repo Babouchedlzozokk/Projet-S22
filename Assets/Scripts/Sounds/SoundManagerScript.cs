@@ -11,6 +11,7 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip GrapplingSound;
     public static AudioClip BackSound;
     public static AudioClip ReloadSound;
+    public static AudioClip ScreamSound;
     public static AudioSource audioSrc;
 
     void Start()
@@ -21,6 +22,7 @@ public class SoundManagerScript : MonoBehaviour
         GrapplingSound = Resources.Load<AudioClip>("grappling");
         BackSound = Resources.Load<AudioClip>("backintime");
         ReloadSound = Resources.Load<AudioClip>("reload");
+        ScreamSound = Resources.Load<AudioClip>("Scream");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -45,6 +47,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "backintime":
                 audioSrc.PlayOneShot(BackSound, 1F);
+                break;
+            case "scream":
+                audioSrc.PlayOneShot(ScreamSound, 1f);
                 break;
             default:
                 audioSrc.PlayOneShot(NothingSound);

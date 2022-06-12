@@ -82,6 +82,12 @@ public class Boss : MonoBehaviour
             {
                 if (CanCharge)
                 {
+                    if (!soundplaying)
+                    {
+                        StartCoroutine(SoundCharge());
+                        SoundManagerScript.PlaySound("scream");
+
+                    }
                     StartCoroutine(Charge());
                 }
                 else
@@ -90,7 +96,7 @@ public class Boss : MonoBehaviour
                 }
             }
             if (!playerIsInAttckRange && !playerIsInSightRange)
-                       ennemy.SetDestination(transform.position); 
+                ennemy.SetDestination(transform.position); 
         }
         
        
@@ -149,7 +155,13 @@ public class Boss : MonoBehaviour
         StartCoroutine(WaitForCharge());
     }
 
-   
+    private bool soundplaying = false;
+   IEnumerator SoundCharge()
+    {
+        soundplaying = true;
+        yield return new WaitForSeconds(10);
+        soundplaying = false;
+    }
 
     IEnumerator WaitForCharge ()
     {
