@@ -19,9 +19,9 @@ public class PlayerShoot : MonoBehaviour
     public bool canShoot = true;
     public float BalleRestante;
 
-    public gun weapon;
+    public gun weapon; 
 
-    public Text ammo;
+
 
 
     // Start is called before the first frame update
@@ -50,18 +50,18 @@ public class PlayerShoot : MonoBehaviour
 
         if (!visible )
         {
-            ammo.text = BalleRestante + "/20";
             if (Input.GetKeyDown(INPUTS.reload))
                 StartCoroutine(Reload());
             if (canShoot)
             {
                 if (BalleRestante <= 0)
                     StartCoroutine(Reload());
-                else if (Input.GetKey(INPUTS.tir_principal))
+                else if ( Input.GetKey(INPUTS.tir_principal))
                 {
                     SoundManagerScript.PlaySound("gunshot");
                     Shoot(); 
                     muzzleFlash.Play();
+                   
                 }
             }
         }
@@ -74,7 +74,6 @@ public class PlayerShoot : MonoBehaviour
         
         RaycastHit hit;
         BalleRestante--;
-        ammo.text = BalleRestante + "/20";
         Vector3 Random_xy = new Vector3(Random.Range(-weapon.spread, weapon.spread), Random.Range(-weapon.spread, weapon.spread),0);
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range))
         {
@@ -138,7 +137,6 @@ public class PlayerShoot : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         canShoot = true;
         BalleRestante = weapon.chargeur;
-        ammo.text = BalleRestante + "/20";
     }
     
 
