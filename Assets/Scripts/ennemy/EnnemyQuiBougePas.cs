@@ -50,7 +50,9 @@ public class EnnemyQuiBougePas : MonoBehaviour
         playerIsInAttckRange = Physics.CheckSphere(transform.position, weapon.range, WhatIsPlayer);
         
         if ( playerIsInAttckRange)
+        {
             AttackPlayer();
+        }
       
             
     }

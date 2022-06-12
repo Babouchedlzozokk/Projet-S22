@@ -57,13 +57,13 @@ public class EnnemyMovement : MonoBehaviour
                     Dash();
                 }
                 else 
-                { 
+                {
                     AttackPlayer();
                 }
                 StartCoroutine(WaitForDash());
             }
             else 
-            { 
+            {
                 AttackPlayer();
             }    
         }

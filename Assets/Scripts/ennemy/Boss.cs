@@ -183,6 +183,7 @@ public class Boss : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range) && CanShoot)
         {
             MuzzleFlash.Play();
+            SoundManagerScript.PlaySound("gunshot");
             StartCoroutine(WaitForShoot());
             PlayerDamage p = hit.transform.GetComponent<PlayerDamage>();
             if (p != null)
