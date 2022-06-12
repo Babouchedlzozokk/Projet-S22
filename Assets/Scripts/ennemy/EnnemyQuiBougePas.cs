@@ -31,7 +31,7 @@ public class EnnemyQuiBougePas : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        weapon = new gun(37, 40, 0.2f , 0.6f , 50);
+        weapon = new gun(37, 40, 0 , 0.8f , 50);
 
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
@@ -95,11 +95,9 @@ public class EnnemyQuiBougePas : MonoBehaviour
     public void TakeDamage(float damage)
     {
         heath -= damage;
-        Debug.Log("Enemy toucher ");
         if (heath <= 0)
         {
             Destroy(gameObject);
-
         }
     }
 }

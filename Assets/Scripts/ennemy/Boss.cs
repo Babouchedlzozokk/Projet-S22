@@ -35,7 +35,7 @@ public class Boss : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>(); 
-        weapon = new gun(37, 20, 0 , 1 , 30);
+        weapon = new gun(37, 20, 0.1f , 1 , 30);
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
 
@@ -57,10 +57,14 @@ public class Boss : MonoBehaviour
             {
                 if (CanPunch)
                 {
-                    
-                    
+                    if (CanCharge)
+                    {
+                        StartCoroutine(Charge());
+                    }
+                    else
+                    {
                         StartCoroutine(Punch());
-                    
+                    }
                 }
                 ;
             }
@@ -172,7 +176,7 @@ public class Boss : MonoBehaviour
     
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(weapon.attackSpeed);
         Vector3 Random_xy = new Vector3(Random.Range(-weapon.spread, weapon.spread), Random.Range(-weapon.spread, weapon.spread),0);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward+Random_xy, out hit, weapon.range) && CanShoot)
@@ -189,7 +193,7 @@ public class Boss : MonoBehaviour
     IEnumerator WaitForShoot()
     {
         CanShoot = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(weapon.attackSpeed);
         CanShoot = true;
 
     }
@@ -199,7 +203,7 @@ public class Boss : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 500 && !HaveMoitierPv)
+        if (health <= 250 && !HaveMoitierPv)
         {
             HaveMoitierPv = true;
             weapon = new gun(50, 15, 0, 1, 1);

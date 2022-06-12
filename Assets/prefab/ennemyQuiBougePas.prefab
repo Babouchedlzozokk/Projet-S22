@@ -6761,7 +6761,7 @@ MonoBehaviour:
   cam: {fileID: 8836490425506578001}
   MuzzleFlash: {fileID: 6813400615451249382}
   CanShoot: 1
-  heath: 100
+  heath: 150
 --- !u!136 &6527049082906559546
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6773,7 +6773,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7864331928219405897
