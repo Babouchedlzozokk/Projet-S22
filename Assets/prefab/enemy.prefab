@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487f98748481ac94fb1e76759d5e0eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fusil: {fileID: 4825370161452618225}
   ennemy: {fileID: 5164516212526313325}
   player: {fileID: 0}
   WhatIsGround:
@@ -213,11 +214,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   sightRange: 40
-  attcakRange: 10
   playerIsInSightRange: 0
   playerIsInAttckRange: 0
   heath: 100
-  attackSpeed: 0
   cam: {fileID: 3998652443795177194}
   MuzzleFlash: {fileID: 3991930515412340390}
   CanShoot: 1
@@ -291,6 +290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
+--- !u!1 &4825370161452618225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
+  m_PrefabInstance: {fileID: 4825370161452490605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &3991930515412340390 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8471560344917299659, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}

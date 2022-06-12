@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class EnnemyMovement : MonoBehaviour
 {
+    public GameObject fusil;
     public NavMeshAgent ennemy;
     public Transform player;
     public LayerMask WhatIsGround, WhatIsPlayer;
@@ -112,7 +113,8 @@ public class EnnemyMovement : MonoBehaviour
     void AttackPlayer()
     {
         ennemy.SetDestination(transform.position);
-        transform.LookAt(player);
+        cam.transform.LookAt(player);
+        fusil.transform.LookAt(player);
         StartCoroutine(Shoot());
 
     }
