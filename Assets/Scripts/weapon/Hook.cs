@@ -11,16 +11,20 @@ public class Hook : MonoBehaviour
     [SerializeField] public  float maxDistance;
     [SerializeField] public float HookSpeed;
     [SerializeField] public Vector3 OffSet;
+    [SerializeField] public Rigidbody Ont;
 
     private bool isShooting;
     private bool isGrappling;
     private Vector3 HookPoint;
+    private Quaternion Rot;
     public bool visible;
     private void Start()
     {
         isGrappling = false;
         isShooting = false;
         visible = false;
+        Ont = Player.GetComponent<Rigidbody>();
+        Quaternion Rot = HandPos.rotation;
     }
     void Update()
     {
@@ -36,14 +40,17 @@ public class Hook : MonoBehaviour
         if (isGrappling)
         {
             GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
-            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 0.5)
+            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4)
             {
-                Player.transform.position = Vector3.Lerp(Player.transform.position, HookPoint - OffSet  , HookSpeed * Time.deltaTime);
+                HandPos.LookAt(HookPoint);
+                Ont.AddForce(HandPos.transform.forward*1000, ForceMode.Force);
+                HandPos.rotation = Rot;
             }
-            if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 0.5)
+            if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 4)
             {
                 isGrappling = false ;
                 isShooting = false ;
+
                 GrapplingHook.SetParent(HandPos);
                 GrapplingHook.position = HandPos.position;
                 PlayerMovement.canDouble = true;
