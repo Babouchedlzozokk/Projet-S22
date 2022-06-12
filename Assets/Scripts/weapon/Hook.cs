@@ -43,7 +43,7 @@ public class Hook : MonoBehaviour
             if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4)
             {
                 HandPos.LookAt(HookPoint);
-                Ont.AddForce(HandPos.transform.forward*1000, ForceMode.Force);
+                Ont.AddForce(HandPos.transform.forward*200, ForceMode.Force);
                 HandPos.rotation = Rot;
             }
             if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 4)
