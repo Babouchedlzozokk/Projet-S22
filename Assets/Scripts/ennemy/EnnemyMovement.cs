@@ -31,7 +31,7 @@ public class EnnemyMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        weapon = new gun(35, 20, 0.2f , 1 , 30);
+        weapon = new gun(25, 20, 0.2f , 0.75f , 30);
 
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
