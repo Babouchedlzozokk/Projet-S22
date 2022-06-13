@@ -31,6 +31,7 @@ public class PlayerDamage : MonoBehaviour
                 Health += 30;
             if (Health > maxHealth)
                 Health = maxHealth;
+            healthBar.setHealth(Health);
         }
         if (Physics.CheckSphere(transform.position, 2, WhatIsBoss))
             TakeDamage(0.5f);
