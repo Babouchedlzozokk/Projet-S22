@@ -29,9 +29,9 @@ public class EnnemyQuiBougePas : MonoBehaviour
     
 
     private void Awake()
-    {
+    {   
         rb = GetComponent<Rigidbody>();
-        weapon = new gun(37, 40, 0 , 0.8f , 50);
+        weapon = new gun(37, 30, 0 , 0.8f , 50);
 
         player = GameObject.Find("Camera Position").transform;
         ennemy = GetComponent<NavMeshAgent>();
