@@ -9,10 +9,12 @@ public class PowerUpDash : MonoBehaviour
     public GameObject pickupEffect;
     public GameObject Panel;
     public GameObject Healthbar;
+    private bool test = false;
 
     private void Update()
     {
-        Healthbar.SetActive(false);
+        if (test)
+            Healthbar.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +36,7 @@ public class PowerUpDash : MonoBehaviour
 
     IEnumerator ReadingTime()
     {
+        test = true;
         Panel.SetActive(true);
         yield return new WaitForSeconds(6);
         Panel.SetActive(false);
