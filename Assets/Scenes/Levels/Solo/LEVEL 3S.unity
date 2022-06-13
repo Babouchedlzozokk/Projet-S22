@@ -50507,6 +50507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 255866704}
   Panel: {fileID: 525098307}
+  Healthbar: {fileID: 2096407909}
 --- !u!135 &1717479260
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -8,6 +8,13 @@ public class PowerUpDash : MonoBehaviour
     public static bool HaveDash = false;
     public GameObject pickupEffect;
     public GameObject Panel;
+    public GameObject Healthbar;
+
+    private void Update()
+    {
+        Healthbar.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -30,6 +37,7 @@ public class PowerUpDash : MonoBehaviour
         Panel.SetActive(true);
         yield return new WaitForSeconds(3);
         Panel.SetActive(false);
+        Healthbar.SetActive(true);
         Destroy(gameObject);
     }
 }

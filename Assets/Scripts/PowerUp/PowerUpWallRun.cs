@@ -7,12 +7,14 @@ public class PowerUpWallRun : MonoBehaviour
     public static bool HaveWallRun =false;
     public GameObject pickupEffect;
     public GameObject Panel;
+    public GameObject Healthbar;
     void Start()
     {
         
     }
     private void Update()
     {
+        Healthbar.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,6 +38,7 @@ public class PowerUpWallRun : MonoBehaviour
         Panel.SetActive(true);
         yield return new WaitForSeconds(3);
         Panel.SetActive(false);
+        Healthbar.SetActive(true); 
         Destroy(gameObject);
     }
 }
