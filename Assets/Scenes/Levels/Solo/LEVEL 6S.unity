@@ -4263,6 +4263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6525508686795461948, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1253746221}
     - target: {fileID: 6923881310481906130, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16938,6 +16942,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6525508686795461948, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1253746221}
     - target: {fileID: 6923881310481906130, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 850
@@ -29835,6 +29843,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6525508686795461948, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1253746221}
     - target: {fileID: 6923881310481906130, guid: ee164a0ec581d8e41a60d7507cb11e77, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -34122,6 +34134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
+--- !u!4 &1253746221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6565432645906764676, guid: 9c98017ae02ca2345bf9f85b4587aff3, type: 3}
+  m_PrefabInstance: {fileID: 1253746220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1254599795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34465,7 +34482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1264088437
 PrefabInstance:
@@ -40950,7 +40967,7 @@ RectTransform:
   m_Children:
   - {fileID: 1842904255}
   m_Father: {fileID: 0}
-  m_RootOrder: 798
+  m_RootOrder: 799
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -43841,6 +43858,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7398432296262037290, guid: 7e001578eef9b7042a5a3c2fe75fb147, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1253746221}
     - target: {fileID: 7490395862453428940, guid: 7e001578eef9b7042a5a3c2fe75fb147, type: 3}
       propertyPath: m_Name
       value: enemy (1)
