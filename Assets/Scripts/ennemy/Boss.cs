@@ -31,6 +31,8 @@ public class Boss : MonoBehaviour
     public bool CanPunch = true;
     public bool IsCharging = false;
     private Rigidbody rb;
+
+    public GameObject Empty;
    
     private void Awake()
     {
@@ -211,6 +213,7 @@ public class Boss : MonoBehaviour
         }
         if (health <= 0)
         {
+            Empty.SetActive(true);
             Destroy(gameObject);
         }
     }
