@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-
+    public LayerMask SafeZone;
     public HealthBarScript healthBar;
     public static float Health = 100;
     public static float maxHealth = 100;
@@ -24,13 +24,29 @@ public class PlayerDamage : MonoBehaviour
 
     private void Update()
     {
+        if (Physics.CheckSphere(transform.position, 5, SafeZone))
+        {
+            if (Health < maxHealth)
+                Health += 100;
+            if (Health > maxHealth)
+                Health = maxHealth;
+        }
+            
         if (Physics.CheckSphere(transform.position, 2, WhatIsBoss))
             TakeDamage(0.5f);
     }
 
+    public void Regen()
+    {
+        if (Health < 100)
+            Health += 1;
+    }
     public void TakeDamage(float damage)
     {
-        Health -= damage;
+        if (Physics.CheckSphere(transform.position, 5, SafeZone))
+            Health -= 0;
+        else
+            Health -= damage;
         healthBar.setHealth(Health); 
         if (Health <= 0)
         {

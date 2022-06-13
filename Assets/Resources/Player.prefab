@@ -1724,19 +1724,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.24413617
+      value: -0.24413623
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6805212
+      value: 0.68052125
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.30635437
+      value: 0.30635434
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6192217
+      value: 0.61922157
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2580,6 +2580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bb6759ea046a345a0f12230ba400e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SafeZone:
+    serializedVersion: 2
+    m_Bits: 16384
   healthBar: {fileID: 0}
   Panel: {fileID: 0}
   WhatIsBoss:
@@ -2619,7 +2622,7 @@ MonoBehaviour:
   WallMask:
     serializedVersion: 2
     m_Bits: 2048
-  cam: {fileID: 0}
+  cam: {fileID: 6565432645268855582}
   fov: 90
   WallRunfov: 110
   WallRunfovTime: 20
