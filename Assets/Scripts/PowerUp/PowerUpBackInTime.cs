@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PowerUpBackInTime : MonoBehaviour
 {
-    public GameObject pickupEffect;
     public static bool HaveBackInTime = false;
     public GameObject Panel;
     public GameObject Healthbar;
@@ -24,8 +23,6 @@ public class PowerUpBackInTime : MonoBehaviour
     }
     void Pickup(Collider player)
     {
-        // Spawn a cool effect
-        Instantiate(pickupEffect, transform.position, transform.rotation);
         // Apply effect to the player
         HaveBackInTime = true;
         // Remove PowerUp 
