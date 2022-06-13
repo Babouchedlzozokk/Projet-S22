@@ -35,7 +35,7 @@ public class PowerUpDash : MonoBehaviour
     IEnumerator ReadingTime()
     {
         Panel.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         Panel.SetActive(false);
         Healthbar.SetActive(true);
         Destroy(gameObject);
