@@ -9977,7 +9977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 720838510}
   Panel: {fileID: 1663149974}
-  Healthbar: {fileID: 1663149974}
+  Healthbar: {fileID: 803086063}
 --- !u!135 &286262010
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10091,6 +10091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1780941070}
+  Panel: {fileID: 0}
+  Healthbar: {fileID: 0}
 --- !u!114 &287906478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34826,10 +34828,7 @@ GameObject:
   - component: {fileID: 936048630}
   - component: {fileID: 936048629}
   - component: {fileID: 936048628}
-  - component: {fileID: 936048627}
   - component: {fileID: 936048626}
-  - component: {fileID: 936048625}
-  - component: {fileID: 936048624}
   m_Layer: 0
   m_Name: AllPowerUp  (1)
   m_TagString: Untagged
@@ -34837,34 +34836,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &936048624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936048623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a7830b8f30090498ebc2dea8c3bf77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 1310395489}
---- !u!114 &936048625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936048623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad6bfbd183d1654597870340b61ccbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 1310395489}
-  Panel: {fileID: 1663149974}
-  Healthbar: {fileID: 1663149974}
 --- !u!114 &936048626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34878,21 +34849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1310395489}
---- !u!114 &936048627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936048623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df24f441e93b9a4883c27c238a990d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 1310395489}
-  Panel: {fileID: 1663149974}
-  Healthbar: {fileID: 1663149974}
 --- !u!135 &936048628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -44004,7 +43960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 957913993}
   Panel: {fileID: 1663149974}
-  Healthbar: {fileID: 1663149974}
+  Healthbar: {fileID: 803086063}
 --- !u!135 &1178919538
 SphereCollider:
   m_ObjectHideFlags: 0
