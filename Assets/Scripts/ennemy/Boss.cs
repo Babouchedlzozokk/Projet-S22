@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour
     public Transform player;
     public GameObject fusils;
     public LayerMask WhatIsGround, WhatIsPlayer;
-
+    public Animator animator;   
     [Header("states")] 
     public float sightRange = 40; 
     public bool playerIsInSightRange;
@@ -38,16 +38,16 @@ public class Boss : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); 
         weapon = new gun(37, 20, 0.1f , 1 , 30);
-        player = GameObject.Find("Camera Position").transform;
+        player = GameObject.Find("Player").transform;
         ennemy = GetComponent<NavMeshAgent>();
-
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         playerIsInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
         playerIsInAttckRange = Physics.CheckSphere(transform.position, weapon.range, WhatIsPlayer);
-
+        animator.SetBool("Charge",IsCharging);
         if (HaveMoitierPv)
         {
             if (playerIsInSightRange && !playerIsInAttckRange)
@@ -141,7 +141,7 @@ public class Boss : MonoBehaviour
     void AttackPlayer()
     { 
         ennemy.SetDestination(transform.position);
-       fusils.transform.LookAt(player);
+        transform.LookAt(player);
        cam.transform.LookAt(player);
        StartCoroutine(Shoot());
     }
