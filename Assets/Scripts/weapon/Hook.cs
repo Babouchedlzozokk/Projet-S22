@@ -57,14 +57,14 @@ public class Hook : MonoBehaviour
         if (isGrappling)
         {
             GrapplingHook.position = Vector3.Lerp(GrapplingHook.position, HookPoint, HookSpeed * Time.deltaTime);
-            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 4 && !hookcd)
+            if(Vector3.Distance(GrapplingHook.position,HookPoint) < 10 && !hookcd)
             {
                 HandPos.LookAt(HookPoint);
                 timehook = Time.deltaTime;
                 Ont.AddForce(HandPos.transform.forward*200, ForceMode.Force);
                 HandPos.rotation = Rot;
             }
-            if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 4)
+            if (Vector3.Distance(Player.transform.position, HookPoint - OffSet) < 10)
             {
                 isGrappling = false ;
                 isShooting = false ;
