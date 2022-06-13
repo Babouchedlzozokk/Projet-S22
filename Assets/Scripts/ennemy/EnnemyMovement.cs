@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.Animations;
 
 public class EnnemyMovement : MonoBehaviour
 {
@@ -32,7 +33,6 @@ public class EnnemyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         weapon = new gun(25, 20, 0.2f , 0.75f , 30);
-
         player = GameObject.Find("Orientation").transform;
         ennemy = GetComponent<NavMeshAgent>();
         
@@ -51,9 +51,8 @@ public class EnnemyMovement : MonoBehaviour
             if (CanDash)
             { 
                 int WichMove = Random.Range(0, 100);
-                if (WichMove >= 75)
+                if (WichMove >= 20)
                 {
-                    Debug.Log("Dash");
                     Dash();
                 }
                 else 
@@ -78,23 +77,25 @@ public class EnnemyMovement : MonoBehaviour
         int x1;
         int y1;
         Vector3 vect;
-        int x = Random.Range(0,1);
+        int x = Random.Range(0,2);
+        Debug.Log(x);
         if (x == 0)
         {
-            x1 = Random.Range(1, 5);
-            x1 *= 20;
+            x1 = Random.Range(1, 5) * 20;
+            transform.Rotate(0, 90, 0);
              
         }
         else
         {
-            x1 = Random.Range(1, 5);
-            x1 *= -20;
-            
+            x1 = Random.Range(1, 5) * 20;
+            transform.Rotate(0, -90, 0);
+
 
         }
         y1 = Random.Range(-1, 1);
-        rb.AddForce(ennemy.transform.right*x1+ennemy.transform.forward*y1,ForceMode.Impulse);
-        
+        rb.AddForce(ennemy.transform.forward*x1,ForceMode.Impulse);
+
+
     }
 
     IEnumerator WaitForDash()
