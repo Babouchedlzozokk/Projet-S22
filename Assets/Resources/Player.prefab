@@ -1724,19 +1724,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.24413617
+      value: -0.24413623
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6805212
+      value: 0.68052125
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.30635437
+      value: 0.30635434
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6192217
+      value: 0.61922157
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 60dc0489b06c1a5449b15e153d2a6349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2585,6 +2585,9 @@ MonoBehaviour:
   WhatIsBoss:
     serializedVersion: 2
     m_Bits: 8192
+  SafeZone:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!114 &4784972528596424089
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class PlayerDamage : MonoBehaviour
     private Vector3 oldPosition;
     private bool BossIsNear = false;
     public LayerMask WhatIsBoss;
+    public LayerMask SafeZone;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,13 +25,21 @@ public class PlayerDamage : MonoBehaviour
 
     private void Update()
     {
+        if (Physics.CheckSphere(transform.position, 5, SafeZone))
+        {
+            if (Health < maxHealth)
+                Health += 30;
+            if (Health > maxHealth)
+                Health = maxHealth;
+        }
         if (Physics.CheckSphere(transform.position, 2, WhatIsBoss))
             TakeDamage(0.5f);
     }
 
     public void TakeDamage(float damage)
     {
-        Health -= damage;
+        if (!Physics.CheckSphere(transform.position, 5, SafeZone))
+            Health -= damage;
         healthBar.setHealth(Health); 
         if (Health <= 0)
         {
