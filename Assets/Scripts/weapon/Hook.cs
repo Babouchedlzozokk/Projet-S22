@@ -19,7 +19,9 @@ public class Hook : MonoBehaviour
     private Quaternion Rot;
     public bool visible;
     public bool hookcd;
+    public static bool HaveHook;
     public float timehook;
+    public GameObject hook;
 
     private void Start()
     {
@@ -27,8 +29,10 @@ public class Hook : MonoBehaviour
         isShooting = false;
         visible = false;
         hookcd = false;
+        HaveHook = false;
         Ont = Player.GetComponent<Rigidbody>();
         Quaternion Rot = HandPos.rotation;
+        hook.SetActive(false);
     }
     void Update()
     {
@@ -36,8 +40,9 @@ public class Hook : MonoBehaviour
         {
             visible = !visible;
         }
-
-        if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible && !hookcd)
+        if (HaveHook)
+            hook.SetActive(true);
+        if (Input.GetKeyDown(INPUTS.tir_secondaire) && !visible && !hookcd && HaveHook)
         {
             ShootHook();
         }

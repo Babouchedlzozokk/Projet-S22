@@ -38,6 +38,7 @@ public class PlayerShoot : MonoBehaviour
         visible = false;
         BalleRestante = weapon.chargeur;
         ammo.text = BalleRestante + "/20";
+
     }
 
     // Update is called once per frame
@@ -49,7 +50,7 @@ public class PlayerShoot : MonoBehaviour
             visible = !visible;
         }
 
-        if (!visible )
+        if (!visible && Weaponappear.Haveweapon )
         {
             if (Input.GetKeyDown(INPUTS.reload))
                 StartCoroutine(Reload());
