@@ -221,6 +221,25 @@ MonoBehaviour:
   MuzzleFlash: {fileID: 3991930515412340390}
   CanShoot: 1
   CanDash: 1
+--- !u!95 &2538404595155083151
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477208087920255607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1e135a6d3b7913347b6e3ad028da6702, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3ff59ff563be4a042a3a6d007da0fcf3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4825370161452490605
 PrefabInstance:
   m_ObjectHideFlags: 0

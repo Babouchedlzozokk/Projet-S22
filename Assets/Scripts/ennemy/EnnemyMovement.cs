@@ -33,7 +33,7 @@ public class EnnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         weapon = new gun(25, 20, 0.2f , 0.75f , 30);
 
-        player = GameObject.Find("Camera Position").transform;
+        player = GameObject.Find("Orientation").transform;
         ennemy = GetComponent<NavMeshAgent>();
         
     }
@@ -113,7 +113,7 @@ public class EnnemyMovement : MonoBehaviour
     void AttackPlayer()
     {
         ennemy.SetDestination(transform.position);
-        cam.transform.LookAt(player);
+        transform.LookAt(player);
         fusil.transform.LookAt(player);
         StartCoroutine(Shoot());
 
