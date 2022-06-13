@@ -105,7 +105,7 @@ public class Hook : MonoBehaviour
     IEnumerator CoroutineWaitHook()
     {
         hookcd = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         hookcd = false;
     }
 }
