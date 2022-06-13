@@ -12,6 +12,11 @@ public class Sampleto1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerDamage.maxHealth = PlayerDamage.Health;
+            PowerUpDash.HaveDash = false;
+            PowerUpDoubleJump.canDoubleJump = false;
+            PowerUpWallRun.HaveWallRun = false;
+            PowerUpBackInTime.HaveBackInTime = false;
+            
             Pickup(other);
         }
 
