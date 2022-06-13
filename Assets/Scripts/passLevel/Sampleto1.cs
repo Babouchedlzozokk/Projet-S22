@@ -16,6 +16,8 @@ public class Sampleto1 : MonoBehaviour
             PowerUpDoubleJump.canDoubleJump = false;
             PowerUpWallRun.HaveWallRun = false;
             PowerUpBackInTime.HaveBackInTime = false;
+            Hook.HaveHook = false;
+            Weaponappear.Haveweapon = false;
             
             Pickup(other);
         }
