@@ -63,7 +63,8 @@ public class EnnemyQuiBougePas : MonoBehaviour
     void AttackPlayer()
     {
         ennemy.SetDestination(transform.position);
-        
+        transform.LookAt(player);
+        fusil.transform.LookAt(player);
         cam.transform.LookAt(player);
         fusil.transform.LookAt(player);
         StartCoroutine(Shoot());
