@@ -47,7 +47,6 @@ public class Boss : MonoBehaviour
     {
         playerIsInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
         playerIsInAttckRange = Physics.CheckSphere(transform.position, weapon.range, WhatIsPlayer);
-        animator.SetBool("Charge",IsCharging);
         if (HaveMoitierPv)
         {
             if (playerIsInSightRange && !playerIsInAttckRange)
@@ -57,6 +56,7 @@ public class Boss : MonoBehaviour
 
             if (playerIsInSightRange && playerIsInAttckRange)
             {
+                animator.SetBool("Walk", false);
                 if (CanPunch)
                 {
                     if (CanCharge)
@@ -71,7 +71,10 @@ public class Boss : MonoBehaviour
                 ;
             }
             if (!playerIsInAttckRange && !playerIsInSightRange)
-                ennemy.SetDestination(transform.position); 
+            {
+                animator.SetBool("Walk", true);
+                ennemy.SetDestination(transform.position);
+            }
         }
         else
         {
@@ -82,6 +85,7 @@ public class Boss : MonoBehaviour
 
             if (playerIsInSightRange && playerIsInAttckRange)
             {
+                animator.SetBool("Walk", false);
                 if (CanCharge)
                 {
                     if (!soundplaying)
@@ -98,16 +102,19 @@ public class Boss : MonoBehaviour
                 }
             }
             if (!playerIsInAttckRange && !playerIsInSightRange)
-                ennemy.SetDestination(transform.position); 
+            {
+                ennemy.SetDestination(transform.position);
+                animator.SetBool("Walk", true);
+            }
+
         }
         
        
 
     }
-
-
     void ChasePlayer()
     {
+        animator.SetBool("Walk", true);
         ennemy.SetDestination(player.position);
     }
 
@@ -116,7 +123,7 @@ public class Boss : MonoBehaviour
     {
         cam.transform.LookAt(player);
         yield return new WaitForSeconds(0.5f);
-        
+        animator.SetBool("Punch", true);
         RaycastHit hit ;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range) && CanPunch)
         {
@@ -126,7 +133,7 @@ public class Boss : MonoBehaviour
                 p.TakeDamage(weapon.damage);
             
         }
-        
+        animator.SetBool("Punch", false);
     }
     
     IEnumerator WaitForPunch()
@@ -149,6 +156,7 @@ public class Boss : MonoBehaviour
     IEnumerator Charge()
     {
         IsCharging = true;
+        animator.SetBool("Charge", true);
         Vector3 playerPos = player.position;
         ennemy.speed = 30;
         ennemy.SetDestination(playerPos);
@@ -168,8 +176,8 @@ public class Boss : MonoBehaviour
    {
        Debug.Log("Mincraft");
        ennemy.speed = 10;
-        
-       CanCharge = false;
+        animator.SetBool("Charge", false);
+        CanCharge = false;
        IsCharging = false;
        yield return new WaitForSeconds(10 );
        CanCharge = true;
